@@ -3,7 +3,46 @@
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  height: auto;
 }
-th {
+
+.log_in, .sign_up {
+  text-align: center;
+  border: 1px dotted black;
+  width: 280px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+button {
+  float: right;
+}
+
+li, dt {
+  font-size: 18px;
   text-align: left;
+  padding: 10px;
+}
+
+dd {
+  font-size: 14px
+}
+
+#welcome {
+  padding: 0px;
+  margin: 0px;
+  float: left;
+}
+
+#post {
+  text-align: left
+}
+
+.comment {
+  padding-top: 20px;
 }

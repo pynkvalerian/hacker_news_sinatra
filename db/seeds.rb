@@ -16,8 +16,8 @@ module PostsImporter
   def self.import
     2.times do
       Post.create(
-        title: ,
-        description: ,
+        title: Faker::Company.catch_phrase,
+        description: Faker::Company.bs,
         user_id: [1,2].sample
         )
     end
@@ -27,10 +27,10 @@ end
 module CommentsImporter
   def self.import
     4.times do
-      Comments.create(
+      Comment.create(
         post_id: [1,2].sample,
         user_id: [1,2].sample,
-        text: Faker::
+        text: Faker::Lorem.sentences
         )
     end
   end

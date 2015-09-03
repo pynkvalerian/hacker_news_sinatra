@@ -1,0 +1,23 @@
+<div class="container">
+
+  <p id="welcome">Looking good today, <%= @user.name %>!</p>
+  <button id="log_out"><a href="/log_out">Log out</a></button>
+  <button id="profile"><a href="/users/<%= @user.id %>">My Profile</a></button>
+  <button id="new_post"><a href="/new_post">New Post</a></button>
+  <button id="home"><a href="/">Home</a></button>
+
+  <h1>Hacker News Clone</h1>
+
+
+  <div class="new_post">
+    <form action="/new_post" method="post">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" placeholder="Title">
+
+      <textarea rows="5" cols="70" name="description" placeholder="About this post"></textarea>
+
+      <input type="submit" value="Create new post">
+    </form>
+  </div>
+
+</div>

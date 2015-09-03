@@ -1,0 +1,58 @@
+<div class="container">
+
+<!-- WELCOME & BUTTONS -->
+  <% if session[:user_id].nil? %>
+    <p id="welcome">Hello, stranger!</p>
+    <button id="sign_up"><a href="/sign_up">Sign Up</a></button>
+    <button id="log_in"><a href="/log_in">Log In</a></button>
+    <button id="home"><a href="/">Home</a></button>
+  <% else %>
+    <p id="welcome">Looking good today, <%= @user.name %>!</p>
+    <button id="log_out"><a href="/log_out">Log out</a></button>
+    <button id="profile"><a href="/users/<%= @user.id %>">My Profile</a></button>
+    <button id="new_post"><a href="/new_post">New Post</a></button>
+    <button id="home"><a href="/">Home</a></button>
+  <% end %>
+
+
+  <h1>Hacker News Clone</h1>
+
+<!-- POST DETAILS -->
+  <div id="post">
+    <dt><%= @post.title %><br><%= @post.description %></dt>
+    <dd> Posted by <%= @post.user.name %> at <%= @post.created_at %> |
+      <%= @all_comments.size %> comments
+    </dd>
+  </div>
+
+  <div class="list_comments">
+    <h3> Comments </h3>
+
+<!-- ADD COMMENTS -->
+    <% if session[:user_id].nil? %>
+      <p>Please log in to post comments.</p>
+    <% else %>
+      <div class="comment">
+        <form action="/posts/<%= @post.id %>/comment" method="post">
+          <textarea rows="5" cols="70" name="text" placeholder="What are your thoughts about this?"></textarea>
+          <input type="submit" value="Add Comment">
+        </form>
+      </div>
+    <% end %>
+
+<!-- LIST ALL COMMENTS -->
+    <ul>
+      <% @all_comments.each do |comment| %>
+      <li>
+        <dt>
+          <%= comment.text %>
+        </dt>
+        <dd>
+          Commented by: <a href="/posts/<%= comment.user.name %>"><%= comment.user.name %></a> at <%= comment.created_at %></a>
+        </dd>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

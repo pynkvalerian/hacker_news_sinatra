@@ -1,0 +1,42 @@
+<div class="container">
+  <button id="home"><a href="/">Home</a></button>
+
+  <h1>Hacker News Clone</h1>
+
+  <div class="sign_up">
+    <h4>Sign up now!</h4>
+    <form action="/sign_up" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name">
+
+      <label for="email">Email: </label>
+      <input type="text" id="email" name="email" placeholder="Your Email">
+
+      <label for="password">Password: </label>
+      <input type="text" id="password" name="password" placeholder="Your Password">
+
+      <label for="password2">Confirm Password: </label>
+      <input type="text" id="password2" name="confirm_password" placeholder="Retype Your Password">
+
+      <label for="age">Age: </label>
+      <input type="text" id="age" name="age" placeholder="Your Age">
+
+      <label for="country">Country: </label>
+      <input type="text" id="country" name="country" placeholder="Your Country">
+
+      <input type="submit" name="Sign Up">
+    </form>
+  </div>
+
+  <div class="log_in">
+    <h4>Log In</h4>
+    <form action="/log_in" method="post">
+      <label for="email">Email: </label>
+      <input type="text" id="email" name="email" placeholder="Your Email">
+      <label for="password">Password: </label>
+      <input type="text" id="password" name="password" placeholder="Your Password">
+      <input type="submit" name="Log In">
+    </form>
+  </div>
+
+</div>

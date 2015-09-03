@@ -1,0 +1,57 @@
+<div class="container">
+
+<!-- WELCOME & BUTTONS -->
+    <p id="welcome">Looking good today, <%= @user.name %>!</p>
+    <button id="log_out"><a href="/log_out">Log out</a></button>
+    <button id="new_post"><a href="/new_post">New Post</a></button>
+    <button id="home"><a href="/">Home</a></button>
+
+
+  <h1>Hacker News Clone</h1>
+
+<!-- USER DETAILS -->
+  <div id="user_details">
+    <h3>Your Details</h3>
+    <p>Name: <%= @user.name %></p>
+    <p>Email: <%= @user.email %></p>
+    <p>Age: <%= @user.age %></p>
+    <p>Country: <%= @user.country %></p>
+  </div>
+
+<!-- LIST ALL USER'S POSTS -->
+  <div class="list_posts">
+    <h3>Track Your Posts</h3>
+    <ol>
+      <% @all_posts.each do | post| %>
+      <li>
+        <dt>
+          <a href="/posts/<%= post.id %>">
+          <%= post.title %>
+          </a>
+        </dt>
+        <dd>
+          posted at <%= post.created_at %> | <%= post.comments.size %> comments
+        </dd>
+      </li>
+      <% end %>
+    </ol>
+  </div>
+
+<!-- LIST ALL USER'S COMMENTS -->
+  <div class="list_comments">
+    <h3> Track Your Comments </h3>
+    <ol>
+      <% @all_comments.each do |comment| %>
+      <li>
+        <dt>
+          <%= comment.text %>
+        </dt>
+        <dd>
+          Post: <a href="/posts/<%= comment.post.id %>"> <%= comment.post.title %></a> by <%= comment.post.user.name %>
+        </dd>
+      </li>
+      <% end %>
+    </ol>
+  </div>
+
+</div>
