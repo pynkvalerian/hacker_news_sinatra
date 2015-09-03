@@ -20,6 +20,10 @@
       <% @all_posts.each do |post| %>
       <li>
         <dt>
+          <button id="vote" data-post-id="<%= post.id %>">
+            <img src='/assets/thumbs_up.png'>
+          </button>
+          <div class="votes" id="post-vote-<%= post.id %>"><%= post.post_votes.size %> votes</div>
           <a href="/posts/<%= post.id %>">
           <%= post.title %>
           </a>

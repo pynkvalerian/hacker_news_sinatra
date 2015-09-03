@@ -19,7 +19,13 @@
 
 <!-- POST DETAILS -->
   <div id="post">
-    <dt><%= @post.title %><br><%= @post.description %></dt>
+    <dt>
+      <%= @post.title %><br><%= @post.description %>
+      <button id="vote" data-post-id="<%= @post.id %>">
+        <img src='/assets/thumbs_up.png'>
+      </button>
+      <div class="votes" id="post-vote-<%= @post.id %>"><%= @post.post_votes.size %> votes</div>
+    </dt>
     <dd> Posted by <%= @post.user.name %> at <%= @post.created_at %> |
       <%= @all_comments.size %> comments
     </dd>
@@ -49,6 +55,10 @@
         </dt>
         <dd>
           Commented by: <a href="/posts/<%= comment.user.name %>"><%= comment.user.name %></a> at <%= comment.created_at %></a>
+          <button id="comment-vote" data-comment-id="<%= comment.id %>">
+            <img src='/assets/thumbs_up.png'>
+          </button>
+          <div class="votes" id="comment-vote-<%= comment.id %>"><%= comment.comment_votes.count %> votes</div>
         </dd>
       </li>
       <% end %>

@@ -14,6 +14,11 @@
   vertical-align: middle;
 }
 
+img {
+  width: 15px;
+  height: 15px;
+}
+
 h1 {
   padding-top: 20px;
   padding-bottom: 0px;
@@ -45,4 +50,10 @@ dd {
 
 .comment {
   padding-top: 20px;
+}
+
+.votes {
+  float:right;
+  font-size: 14px;
+  padding: 5px;
 }
